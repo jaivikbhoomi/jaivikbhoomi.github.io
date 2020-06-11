@@ -36,7 +36,7 @@
 
         a {
             font-size: 20px;
-            color: Rs.normal-color;
+            color: $normal-color;
             font-weight: 700;
         }
     }
@@ -48,7 +48,7 @@
     .blog__btn {
         display: inline-block;
         font-size: 14px;
-        color: Rs.normal-color;
+        color: $normal-color;
         text-transform: uppercase;
         letter-spacing: 1px;
         border: 1px solid #b2b2b2;
@@ -74,7 +74,7 @@
         top: -29px;
         height: 1px;
         width: 100%;
-        background: Rs.black-color;
+        background: $black-color;
         opacity: .1;
         content: '';
     }

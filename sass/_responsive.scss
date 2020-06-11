@@ -109,7 +109,7 @@
   
     .humberger__menu__wrapper {
       width: 300px;
-      background: Rs.white-color;
+      background: $white-color;
       position: fixed;
       left: -300px;
       top: 0;
@@ -149,7 +149,7 @@
           list-style: none;
   
           i {
-            color: Rs.heading-color-2;
+            color: $heading-color-2;
             margin-right: 5px;
           }
         }
@@ -176,15 +176,15 @@
   
             i {
               font-size: 18px;
-              color: Rs.normal-color;
+              color: $normal-color;
             }
   
             span {
               height: 13px;
               width: 13px;
-              background: Rs.primary-color;
+              background: $primary-color;
               font-size: 10px;
-              color: Rs.white-color;
+              color: $white-color;
               line-height: 13px;
               text-align: center;
               font-weight: 700;
@@ -204,7 +204,7 @@
         display: inline-block;
   
         span {
-          color: Rs.heading-color-2;
+          color: $heading-color-2;
           font-weight: 700;
         }
       }
@@ -257,7 +257,7 @@
       }
   
       .slicknav_nav a {
-        color: Rs.normal-color;
+        color: $normal-color;
         font-size: 16px;
         font-weight: 600;
         margin: 0;
@@ -268,7 +268,7 @@
         -webkit-border-radius: 0;
         border-radius: 0;
         background: transparent;
-        color: Rs.primary-color;
+        color: $primary-color;
       }
   
       .slicknav_nav .slicknav_row,
@@ -425,7 +425,7 @@
   
     .humberger__menu__wrapper {
       width: 300px;
-      background: Rs.white-color;
+      background: $white-color;
       position: fixed;
       left: -300px;
       top: 0;
@@ -465,7 +465,7 @@
           list-style: none;
   
           i {
-            color: Rs.heading-color-2;
+            color: $heading-color-2;
             margin-right: 5px;
           }
         }
@@ -492,15 +492,15 @@
   
             i {
               font-size: 18px;
-              color: Rs.normal-color;
+              color: $normal-color;
             }
   
             span {
               height: 13px;
               width: 13px;
-              background: Rs.primary-color;
+              background: $primary-color;
               font-size: 10px;
-              color: Rs.white-color;
+              color: $white-color;
               line-height: 13px;
               text-align: center;
               font-weight: 700;
@@ -520,7 +520,7 @@
         display: inline-block;
   
         span {
-          color: Rs.heading-color-2;
+          color: $heading-color-2;
           font-weight: 700;
         }
       }
@@ -573,7 +573,7 @@
       }
   
       .slicknav_nav a {
-        color: Rs.normal-color;
+        color: $normal-color;
         font-size: 16px;
         font-weight: 600;
         margin: 0;
@@ -584,7 +584,7 @@
         -webkit-border-radius: 0;
         border-radius: 0;
         background: transparent;
-        color: Rs.primary-color;
+        color: $primary-color;
       }
   
       .slicknav_nav .slicknav_row,

@@ -9,7 +9,7 @@
     }
 
     h4 {
-        color: Rs.normal-color;
+        color: $normal-color;
         font-weight: 700;
         margin-bottom: 25px;
     }
@@ -21,7 +21,7 @@
 
             a {
                 font-size: 16px;
-                color: Rs.normal-color;
+                color: $normal-color;
                 line-height: 39px;
                 display: block;
             }
@@ -85,7 +85,7 @@
                 height: 13px;
                 width: 13px;
                 border-radius: 50%;
-                background: Rs.white-color;
+                background: $white-color;
                 border: none;
                 -webkit-box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.2);
                 box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.2);
@@ -145,7 +145,7 @@
         label {
 
             &:after {
-                background: Rs.heading-color-2;
+                background: $heading-color-2;
             }
         }
     }
@@ -202,10 +202,10 @@
 
     label {
         font-size: 12px;
-        color: Rs.para-color;
+        color: $para-color;
         display: inline-block;
         padding: 8px 25px 6px;
-        background: Rs.background;
+        background: $background;
         cursor: pointer;
         margin-bottom: 0;
 

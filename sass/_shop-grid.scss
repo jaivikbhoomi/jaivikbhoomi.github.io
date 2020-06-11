@@ -48,7 +48,7 @@
         background: #dd2222;
         border-radius: 50%;
         font-size: 14px;
-        color: Rs.white-color;
+        color: $white-color;
         line-height: 45px;
         text-align: center;
         position: absolute;
@@ -77,11 +77,11 @@
         &:hover {
 
             a {
-                background: Rs.primary-color;
-                border-color: Rs.primary-color;
+                background: $primary-color;
+                border-color: $primary-color;
 
                 i {
-                    color: Rs.white-color;
+                    color: $white-color;
                     transform: rotate(360deg);
                 }
             }
@@ -89,13 +89,13 @@
 
         a {
             font-size: 16px;
-            color: Rs.normal-color;
+            color: $normal-color;
             height: 40px;
             width: 40px;
             line-height: 40px;
             text-align: center;
-            border: 1px solid Rs.border;
-            background: Rs.white-color;
+            border: 1px solid $border;
+            background: $white-color;
             display: block;
             border-radius: 50%;
             @include transition(all, .5s);
@@ -124,13 +124,13 @@
         margin-bottom: 6px;
 
         a {
-            color: Rs.normal-color;
+            color: $normal-color;
         }
     }
 
     .product__item__price {
         font-size: 18px;
-        color: Rs.normal-color;
+        color: $normal-color;
         font-weight: 700;
 
         span {
@@ -163,7 +163,7 @@
 
                 &.active {
                     background: #707070;
-                    border-color: Rs.para-color;
+                    border-color: $para-color;
                 }
 
                 &:last-child {
@@ -176,7 +176,7 @@
 
 .filter__item {
     padding-top: 45px;
-    border-top: 1px solid Rs.border;
+    border-top: 1px solid $border;
     padding-bottom: 20px;
 }
 
@@ -185,7 +185,7 @@
 
     span {
         font-size: 16px;
-        color: Rs.para-color;
+        color: $para-color;
         display: inline-block;
     }
 
@@ -200,12 +200,12 @@
         padding-left: 18px;
         padding-right: 30px;
         font-size: 16px;
-        color: Rs.normal-color;
+        color: $normal-color;
         font-weight: 700;
         cursor: pointer;
 
         span {
-            color: Rs.normal-color;
+            color: $normal-color;
         }
 
         &:after {
@@ -248,7 +248,7 @@
         color: #b2b2b2;
 
         span {
-            color: Rs.normal-color;
+            color: $normal-color;
             font-weight: 700;
             margin-right: 5px;
         }
@@ -271,7 +271,7 @@
         }
 
         &:hover {
-            color: Rs.primary-color;
+            color: $primary-color;
         }
     }
 }
@@ -316,11 +316,11 @@
         &:hover {
 
             a {
-                background: Rs.primary-color;
-                border-color: Rs.primary-color;
+                background: $primary-color;
+                border-color: $primary-color;
 
                 i {
-                    color: Rs.white-color;
+                    color: $white-color;
                     transform: rotate(360deg);
                 }
             }
@@ -328,13 +328,13 @@
 
         a {
             font-size: 16px;
-            color: Rs.normal-color;
+            color: $normal-color;
             height: 40px;
             width: 40px;
             line-height: 40px;
             text-align: center;
-            border: 1px solid Rs.border;
-            background: Rs.white-color;
+            border: 1px solid $border;
+            background: $white-color;
             display: block;
             border-radius: 50%;
             @include transition(all, .5s);
@@ -356,12 +356,12 @@
         margin-bottom: 10px;
 
         a {
-            color: Rs.heading-color-2;
+            color: $heading-color-2;
         }
     }
 
     h5 {
-        color: Rs.heading-color-2;
+        color: $heading-color-2;
         font-weight: 700;
     }
 }
@@ -383,9 +383,9 @@
         @include transition(all, .3s);
 
         &:hover {
-            background: Rs.primary-color;
-            border-color: Rs.primary-color;
-            color: Rs.white-color;
+            background: $primary-color;
+            border-color: $primary-color;
+            color: $white-color;
         }
 
         &:last-child {
