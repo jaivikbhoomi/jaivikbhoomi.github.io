@@ -1,4 +1,4 @@
-;(function ($, document, window) {
+;(function (Rs., document, window) {
     var
     // default settings object.
         defaults = {
@@ -48,7 +48,7 @@
         // more objects, storing the result in the first object. The first object
         // is generally empty as we don't want to alter the default options for
         // future instances of the plugin
-        this.settings = $.extend({}, defaults, options);
+        this.settings = Rs..extend({}, defaults, options);
 
         // Don't remove IDs by default if duplicate is false
         if (!this.settings.duplicate && !options.hasOwnProperty("removeIds")) {
@@ -62,40 +62,40 @@
     }
 
     Plugin.prototype.init = function () {
-        var $this = this,
-            menu = $(this.element),
+        var Rs.this = this,
+            menu = Rs.(this.element),
             settings = this.settings,
             iconClass,
             menuBar;
 
         // clone menu if needed
         if (settings.duplicate) {
-            $this.mobileNav = menu.clone();
+            Rs.this.mobileNav = menu.clone();
         } else {
-            $this.mobileNav = menu;
+            Rs.this.mobileNav = menu;
         }
 
         // remove IDs if set
         if (settings.removeIds) {
-          $this.mobileNav.removeAttr('id');
-          $this.mobileNav.find('*').each(function (i, e) {
-              $(e).removeAttr('id');
+          Rs.this.mobileNav.removeAttr('id');
+          Rs.this.mobileNav.find('*').each(function (i, e) {
+              Rs.(e).removeAttr('id');
           });
         }
 
         // remove classes if set
         if (settings.removeClasses) {
-            $this.mobileNav.removeAttr('class');
-            $this.mobileNav.find('*').each(function (i, e) {
-                $(e).removeAttr('class');
+            Rs.this.mobileNav.removeAttr('class');
+            Rs.this.mobileNav.find('*').each(function (i, e) {
+                Rs.(e).removeAttr('class');
             });
         }
 
         // remove styles if set
         if (settings.removeStyles) {
-            $this.mobileNav.removeAttr('style');
-            $this.mobileNav.find('*').each(function (i, e) {
-                $(e).removeAttr('style');
+            Rs.this.mobileNav.removeAttr('style');
+            Rs.this.mobileNav.find('*').each(function (i, e) {
+                Rs.(e).removeAttr('style');
             });
         }
 
@@ -111,13 +111,13 @@
         }
 
         // create menu bar
-        $this.mobileNav.attr('class', prefix + '_nav');
-        menuBar = $('<div class="' + prefix + '_menu"></div>');
+        Rs.this.mobileNav.attr('class', prefix + '_nav');
+        menuBar = Rs.('<div class="' + prefix + '_menu"></div>');
 		if (settings.brand !== '') {
-			var brand = $('<div class="' + prefix + '_brand">'+settings.brand+'</div>');
-			$(menuBar).append(brand);
+			var brand = Rs.('<div class="' + prefix + '_brand">'+settings.brand+'</div>');
+			Rs.(menuBar).append(brand);
 		}
-        $this.btn = $(
+        Rs.this.btn = Rs.(
             ['<' + settings.parentTag + ' aria-haspopup="true" role="button" tabindex="0" class="' + prefix + '_btn ' + prefix + '_collapsed">',
                 '<span class="' + prefix + '_menutxt">' + settings.label + '</span>',
                 '<span class="' + iconClass + '">',
@@ -128,18 +128,18 @@
             '</' + settings.parentTag + '>'
             ].join('')
         );
-        $(menuBar).append($this.btn);
+        Rs.(menuBar).append(Rs.this.btn);
         if(settings.appendTo !== '') {
-            $(settings.appendTo).append(menuBar);
+            Rs.(settings.appendTo).append(menuBar);
         } else {
-            $(settings.prependTo).prepend(menuBar);
+            Rs.(settings.prependTo).prepend(menuBar);
         }
-        menuBar.append($this.mobileNav);
+        menuBar.append(Rs.this.mobileNav);
 
         // iterate over structure adding additional structure
-        var items = $this.mobileNav.find('li');
-        $(items).each(function () {
-            var item = $(this),
+        var items = Rs.this.mobileNav.find('li');
+        Rs.(items).each(function () {
+            var item = Rs.(this),
                 data = {};
             data.children = item.children('ul').attr('role', 'menu');
             item.data('menu', data);
@@ -154,28 +154,28 @@
                     containsAnchor = false,
                     nodes = [];
 
-                $(a).each(function () {
-                    if (!$(this).is('ul')) {
+                Rs.(a).each(function () {
+                    if (!Rs.(this).is('ul')) {
                         nodes.push(this);
                     } else {
                         return false;
                     }
 
-                    if($(this).is("a")) {
+                    if(Rs.(this).is("a")) {
                         containsAnchor = true;
                     }
                 });
 
-                var wrapElement = $(
+                var wrapElement = Rs.(
                     '<' + settings.parentTag + ' role="menuitem" aria-haspopup="true" tabindex="-1" class="' + prefix + '_item"/>'
                 );
 
                 // wrap item text with tag and add classes unless we are separating parent links
                 if ((!settings.allowParentLinks || settings.nestedParentLinks) || !containsAnchor) {
-                    var $wrap = $(nodes).wrapAll(wrapElement).parent();
-                    $wrap.addClass(prefix+'_row');
+                    var Rs.wrap = Rs.(nodes).wrapAll(wrapElement).parent();
+                    Rs.wrap.addClass(prefix+'_row');
                 } else
-                    $(nodes).wrapAll('<span class="'+prefix+'_parent-link '+prefix+'_row"/>').parent();
+                    Rs.(nodes).wrapAll('<span class="'+prefix+'_parent-link '+prefix+'_row"/>').parent();
 
                 if (!settings.showChildren) {
                     item.addClass(prefix+'_collapsed');
@@ -186,13 +186,13 @@
                 item.addClass(prefix+'_parent');
 
                 // create parent arrow. wrap with link if parent links and separating
-                var arrowElement = $('<span class="'+prefix+'_arrow">'+(settings.showChildren?settings.openedSymbol:settings.closedSymbol)+'</span>');
+                var arrowElement = Rs.('<span class="'+prefix+'_arrow">'+(settings.showChildren?settings.openedSymbol:settings.closedSymbol)+'</span>');
 
                 if (settings.allowParentLinks && !settings.nestedParentLinks && containsAnchor)
                     arrowElement = arrowElement.wrap(wrapElement).parent();
 
                 //append arrow
-                $(nodes).last().after(arrowElement);
+                Rs.(nodes).last().after(arrowElement);
 
 
             } else if ( item.children().length === 0) {
@@ -202,9 +202,9 @@
             // accessibility for links
             item.children('a').attr('role', 'menuitem').click(function(event){
                 //Ensure that it's not a parent
-                if (settings.closeOnClick && !$(event.target).parent().closest('li').hasClass(prefix+'_parent')) {
+                if (settings.closeOnClick && !Rs.(event.target).parent().closest('li').hasClass(prefix+'_parent')) {
                         //Emulate menu close if set
-                        $($this.btn).click();
+                        Rs.(Rs.this.btn).click();
                     }
             });
 
@@ -212,53 +212,53 @@
             if (settings.closeOnClick && settings.allowParentLinks) {
                 item.children('a').children('a').click(function (event) {
                     //Emulate menu close
-                    $($this.btn).click();
+                    Rs.(Rs.this.btn).click();
                 });
 
                 item.find('.'+prefix+'_parent-link a:not(.'+prefix+'_item)').click(function(event){
                     //Emulate menu close
-                        $($this.btn).click();
+                        Rs.(Rs.this.btn).click();
                 });
             }
         });
 
         // structure is in place, now hide appropriate items
-        $(items).each(function () {
-            var data = $(this).data('menu');
+        Rs.(items).each(function () {
+            var data = Rs.(this).data('menu');
             if (!settings.showChildren){
-                $this._visibilityToggle(data.children, null, false, null, true);
+                Rs.this._visibilityToggle(data.children, null, false, null, true);
             }
         });
 
         // finally toggle entire menu
-        $this._visibilityToggle($this.mobileNav, null, false, 'init', true);
+        Rs.this._visibilityToggle(Rs.this.mobileNav, null, false, 'init', true);
 
         // accessibility for menu button
-        $this.mobileNav.attr('role','menu');
+        Rs.this.mobileNav.attr('role','menu');
 
         // outline prevention when using mouse
-        $(document).mousedown(function(){
-            $this._outlines(false);
+        Rs.(document).mousedown(function(){
+            Rs.this._outlines(false);
         });
 
-        $(document).keyup(function(){
-            $this._outlines(true);
+        Rs.(document).keyup(function(){
+            Rs.this._outlines(true);
         });
 
         // menu button click
-        $($this.btn).click(function (e) {
+        Rs.(Rs.this.btn).click(function (e) {
             e.preventDefault();
-            $this._menuToggle();
+            Rs.this._menuToggle();
         });
 
         // click on menu parent
-        $this.mobileNav.on('click', '.' + prefix + '_item', function (e) {
+        Rs.this.mobileNav.on('click', '.' + prefix + '_item', function (e) {
             e.preventDefault();
-            $this._itemClick($(this));
+            Rs.this._itemClick(Rs.(this));
         });
 
         // check for keyboard events on menu button and menu parents
-        $($this.btn).keydown(function (e) {
+        Rs.(Rs.this.btn).keydown(function (e) {
             var ev = e || event;
 
             switch(ev.keyCode) {
@@ -266,42 +266,42 @@
                 case Keyboard.SPACE:
                 case Keyboard.DOWN:
                     e.preventDefault();
-                    if (ev.keyCode !== Keyboard.DOWN || !$($this.btn).hasClass(prefix+'_open')){
-                        $this._menuToggle();
+                    if (ev.keyCode !== Keyboard.DOWN || !Rs.(Rs.this.btn).hasClass(prefix+'_open')){
+                        Rs.this._menuToggle();
                     }
                     
-                    $($this.btn).next().find('[role="menuitem"]').first().focus();
+                    Rs.(Rs.this.btn).next().find('[role="menuitem"]').first().focus();
                     break;
             }
 
             
         });
 
-        $this.mobileNav.on('keydown', '.'+prefix+'_item', function(e) {
+        Rs.this.mobileNav.on('keydown', '.'+prefix+'_item', function(e) {
             var ev = e || event;
 
             switch(ev.keyCode) {
                 case Keyboard.ENTER:
                     e.preventDefault();
-                    $this._itemClick($(e.target));
+                    Rs.this._itemClick(Rs.(e.target));
                     break;
                 case Keyboard.RIGHT:
                     e.preventDefault();
-                    if ($(e.target).parent().hasClass(prefix+'_collapsed')) {
-                        $this._itemClick($(e.target));
+                    if (Rs.(e.target).parent().hasClass(prefix+'_collapsed')) {
+                        Rs.this._itemClick(Rs.(e.target));
                     }
-                    $(e.target).next().find('[role="menuitem"]').first().focus();
+                    Rs.(e.target).next().find('[role="menuitem"]').first().focus();
                     break;
             }
         });
 
-        $this.mobileNav.on('keydown', '[role="menuitem"]', function(e) {
+        Rs.this.mobileNav.on('keydown', '[role="menuitem"]', function(e) {
             var ev = e || event;
 
             switch(ev.keyCode){
                 case Keyboard.DOWN:
                     e.preventDefault();
-                    var allItems = $(e.target).parent().parent().children().children('[role="menuitem"]:visible');
+                    var allItems = Rs.(e.target).parent().parent().children().children('[role="menuitem"]:visible');
                     var idx = allItems.index( e.target );
                     var nextIdx = idx + 1;
                     if (allItems.length <= nextIdx) {
@@ -312,33 +312,33 @@
                 break;
                 case Keyboard.UP:
                     e.preventDefault();
-                    var allItems = $(e.target).parent().parent().children().children('[role="menuitem"]:visible');
+                    var allItems = Rs.(e.target).parent().parent().children().children('[role="menuitem"]:visible');
                     var idx = allItems.index( e.target );
                     var next = allItems.eq( idx - 1 );
                     next.focus();
                 break;
                 case Keyboard.LEFT:
                     e.preventDefault();
-                    if ($(e.target).parent().parent().parent().hasClass(prefix+'_open')) {
-                        var parent = $(e.target).parent().parent().prev();
+                    if (Rs.(e.target).parent().parent().parent().hasClass(prefix+'_open')) {
+                        var parent = Rs.(e.target).parent().parent().prev();
                         parent.focus();
-                        $this._itemClick(parent);
-                    } else if ($(e.target).parent().parent().hasClass(prefix+'_nav')){
-                        $this._menuToggle();
-                        $($this.btn).focus();
+                        Rs.this._itemClick(parent);
+                    } else if (Rs.(e.target).parent().parent().hasClass(prefix+'_nav')){
+                        Rs.this._menuToggle();
+                        Rs.(Rs.this.btn).focus();
                     }
                     break;
                 case Keyboard.ESCAPE:
                     e.preventDefault();
-                    $this._menuToggle();
-                    $($this.btn).focus();
+                    Rs.this._menuToggle();
+                    Rs.(Rs.this.btn).focus();
                     break;    
             }
         });
 
         // allow links clickable within parent tags if set
         if (settings.allowParentLinks && settings.nestedParentLinks) {
-            $('.'+prefix+'_item a').click(function(e){
+            Rs.('.'+prefix+'_item a').click(function(e){
                     e.stopImmediatePropagation();
             });
         }
@@ -346,9 +346,9 @@
 
     //toggle menu
     Plugin.prototype._menuToggle = function (el) {
-        var $this = this;
-        var btn = $this.btn;
-        var mobileNav = $this.mobileNav;
+        var Rs.this = this;
+        var btn = Rs.this.btn;
+        var mobileNav = Rs.this.mobileNav;
 
         if (btn.hasClass(prefix+'_collapsed')) {
             btn.removeClass(prefix+'_collapsed');
@@ -358,13 +358,13 @@
             btn.addClass(prefix+'_collapsed');
         }
         btn.addClass(prefix+'_animating');
-        $this._visibilityToggle(mobileNav, btn.parent(), true, btn);
+        Rs.this._visibilityToggle(mobileNav, btn.parent(), true, btn);
     };
 
     // toggle clicked items
     Plugin.prototype._itemClick = function (el) {
-        var $this = this;
-        var settings = $this.settings;
+        var Rs.this = this;
+        var settings = Rs.this.settings;
         var data = el.data('menu');
         if (!data) {
             data = {};
@@ -383,29 +383,29 @@
             data.parent.removeClass(prefix+'_collapsed');
             data.parent.addClass(prefix+'_open');
             data.parent.addClass(prefix+'_animating');
-            $this._visibilityToggle(data.ul, data.parent, true, el);
+            Rs.this._visibilityToggle(data.ul, data.parent, true, el);
         } else {
             data.arrow.html(settings.closedSymbol);
             data.parent.addClass(prefix+'_collapsed');
             data.parent.removeClass(prefix+'_open');
             data.parent.addClass(prefix+'_animating');
-            $this._visibilityToggle(data.ul, data.parent, true, el);
+            Rs.this._visibilityToggle(data.ul, data.parent, true, el);
         }
     };
 
     // toggle actual visibility and accessibility tags
     Plugin.prototype._visibilityToggle = function(el, parent, animate, trigger, init) {
-        var $this = this;
-        var settings = $this.settings;
-        var items = $this._getActionItems(el);
+        var Rs.this = this;
+        var settings = Rs.this.settings;
+        var items = Rs.this._getActionItems(el);
         var duration = 0;
         if (animate) {
             duration = settings.duration;
         }
         
         function afterOpen(trigger, parent) {
-            $(trigger).removeClass(prefix+'_animating');
-            $(parent).removeClass(prefix+'_animating');
+            Rs.(trigger).removeClass(prefix+'_animating');
+            Rs.(parent).removeClass(prefix+'_animating');
 
             //Fire afterOpen callback
             if (!init) {
@@ -416,11 +416,11 @@
         function afterClose(trigger, parent) {
             el.attr('aria-hidden','true');
             items.attr('tabindex', '-1');
-            $this._setVisAttr(el, true);
+            Rs.this._setVisAttr(el, true);
             el.hide(); //jQuery 1.7 bug fix
 
-            $(trigger).removeClass(prefix+'_animating');
-            $(parent).removeClass(prefix+'_animating');
+            Rs.(trigger).removeClass(prefix+'_animating');
+            Rs.(parent).removeClass(prefix+'_animating');
 
             //Fire init or afterClose callback
             if (!init){
@@ -451,7 +451,7 @@
             }
             el.attr('aria-hidden','false');
             items.attr('tabindex', '0');
-            $this._setVisAttr(el, false);
+            Rs.this._setVisAttr(el, false);
         } else {
             el.addClass(prefix+'_hidden');
 
@@ -479,7 +479,7 @@
 
     // set attributes of element and children based on visibility
     Plugin.prototype._setVisAttr = function(el, hidden) {
-        var $this = this;
+        var Rs.this = this;
 
         // select all parents that aren't hidden
         var nonHidden = el.children('li').children('ul').not('.'+prefix+'_hidden');
@@ -487,19 +487,19 @@
         // iterate over all items setting appropriate tags
         if (!hidden) {
             nonHidden.each(function(){
-                var ul = $(this);
+                var ul = Rs.(this);
                 ul.attr('aria-hidden','false');
-                var items = $this._getActionItems(ul);
+                var items = Rs.this._getActionItems(ul);
                 items.attr('tabindex', '0');
-                $this._setVisAttr(ul, hidden);
+                Rs.this._setVisAttr(ul, hidden);
             });
         } else {
             nonHidden.each(function(){
-                var ul = $(this);
+                var ul = Rs.(this);
                 ul.attr('aria-hidden','true');
-                var items = $this._getActionItems(ul);
+                var items = Rs.this._getActionItems(ul);
                 items.attr('tabindex', '-1');
-                $this._setVisAttr(ul, hidden);
+                Rs.this._setVisAttr(ul, hidden);
             });
         }
     };
@@ -519,32 +519,32 @@
 
     Plugin.prototype._outlines = function(state) {
         if (!state) {
-            $('.'+prefix+'_item, .'+prefix+'_btn').css('outline','none');
+            Rs.('.'+prefix+'_item, .'+prefix+'_btn').css('outline','none');
         } else {
-            $('.'+prefix+'_item, .'+prefix+'_btn').css('outline','');
+            Rs.('.'+prefix+'_item, .'+prefix+'_btn').css('outline','');
         }
     };
 
     Plugin.prototype.toggle = function(){
-        var $this = this;
-        $this._menuToggle();
+        var Rs.this = this;
+        Rs.this._menuToggle();
     };
 
     Plugin.prototype.open = function(){
-        var $this = this;
-        if ($this.btn.hasClass(prefix+'_collapsed')) {
-            $this._menuToggle();
+        var Rs.this = this;
+        if (Rs.this.btn.hasClass(prefix+'_collapsed')) {
+            Rs.this._menuToggle();
         }
     };
 
     Plugin.prototype.close = function(){
-        var $this = this;
-        if ($this.btn.hasClass(prefix+'_open')) {
-            $this._menuToggle();
+        var Rs.this = this;
+        if (Rs.this.btn.hasClass(prefix+'_open')) {
+            Rs.this._menuToggle();
         }
     };
 
-    $.fn[mobileMenu] = function ( options ) {
+    Rs..fn[mobileMenu] = function ( options ) {
         var args = arguments;
 
         // Is the first parameter an object (options), or was omitted, instantiate a new instance
@@ -552,11 +552,11 @@
             return this.each(function () {
 
                 // Only allow the plugin to be instantiated once due to methods
-                if (!$.data(this, 'plugin_' + mobileMenu)) {
+                if (!Rs..data(this, 'plugin_' + mobileMenu)) {
 
                     // if it has no instance, create a new one, pass options to our plugin constructor,
                     // and store the plugin instance in the elements jQuery data object.
-                    $.data(this, 'plugin_' + mobileMenu, new Plugin( this, options ));
+                    Rs..data(this, 'plugin_' + mobileMenu, new Plugin( this, options ));
                 }
             });
 
@@ -567,7 +567,7 @@
             var returns;
 
             this.each(function () {
-                var instance = $.data(this, 'plugin_' + mobileMenu);
+                var instance = Rs..data(this, 'plugin_' + mobileMenu);
 
                 // Tests that there's already a plugin-instance and checks that the requested public method exists
                 if (instance instanceof Plugin && typeof instance[options] === 'function') {

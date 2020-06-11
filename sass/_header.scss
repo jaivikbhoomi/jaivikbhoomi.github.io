@@ -23,7 +23,7 @@
                 top: 1px;
                 height: 20px;
                 width: 1px;
-                background: $black-color;
+                background: Rs.black-color;
                 opacity: .1;
                 content: "";
             }
@@ -37,7 +37,7 @@
             }
 
             i {
-                color: $heading-color-2;
+                color: Rs.heading-color-2;
                 margin-right: 5px;
             }
         }
@@ -60,7 +60,7 @@
         top: 1px;
         height: 20px;
         width: 1px;
-        background: $black-color;
+        background: Rs.black-color;
         opacity: .1;
         content: "";
     }
@@ -68,7 +68,7 @@
     a {
         font-size: 14px;
         display: inline-block;
-        color: $normal-color;
+        color: Rs.normal-color;
         margin-right: 20px;
 
         &:last-child {
@@ -98,7 +98,7 @@
         top: 1px;
         height: 20px;
         width: 1px;
-        background: $black-color;
+        background: Rs.black-color;
         opacity: .1;
         content: "";
     }
@@ -109,14 +109,14 @@
 
     div {
         font-size: 14px;
-        color: $normal-color;
+        color: Rs.normal-color;
         display: inline-block;
         margin-right: 4px;
     }
 
     span {
         font-size: 14px;
-        color: $normal-color;
+        color: Rs.normal-color;
         position: relative;
         top: 2px;
     }
@@ -139,7 +139,7 @@
 
             a {
                 font-size: 14px;
-                color: $white-color;
+                color: Rs.white-color;
                 padding: 5px 10px;
             }
         }
@@ -152,7 +152,7 @@
     a {
         display: block;
         font-size: 14px;
-        color: $normal-color;
+        color: Rs.normal-color;
 
         i {
             margin-right: 6px;
@@ -198,13 +198,13 @@
                     &:hover {
 
                         &>a {
-                            color: $primary-color;
+                            color: Rs.primary-color;
                         }
                     }
 
                     a {
                         text-transform: capitalize;
-                        color: $white-color;
+                        color: Rs.white-color;
                         font-weight: 400;
                         padding: 5px 15px;
                     }
@@ -214,7 +214,7 @@
             &.active {
 
                 a {
-                    color: $primary-color;
+                    color: Rs.primary-color;
                 }
             }
 
@@ -227,7 +227,7 @@
                 }
 
                 &>a {
-                    color: $primary-color;
+                    color: Rs.primary-color;
                 }
             }
 
@@ -237,7 +237,7 @@
 
             a {
                 font-size: 14px;
-                color: $heading-color-2;
+                color: Rs.heading-color-2;
                 text-transform: uppercase;
                 font-weight: 700;
                 letter-spacing: 2px;
@@ -271,15 +271,15 @@
 
                 i {
                     font-size: 18px;
-                    color: $normal-color;
+                    color: Rs.normal-color;
                 }
 
                 span {
                     height: 13px;
                     width: 13px;
-                    background: $primary-color;
+                    background: Rs.primary-color;
                     font-size: 10px;
-                    color: $white-color;
+                    color: Rs.white-color;
                     line-height: 13px;
                     text-align: center;
                     font-weight: 700;
@@ -299,7 +299,7 @@
         display: inline-block;
 
         span {
-            color: $heading-color-2;
+            color: Rs.heading-color-2;
             font-weight: 700;
         }
     }

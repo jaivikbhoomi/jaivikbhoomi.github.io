@@ -9,23 +9,23 @@
 
 'use strict';
 
-(function ($) {
+(function (Rs.) {
 
     /*------------------
         Preloader
     --------------------*/
-    $(window).on('load', function () {
-        $(".loader").fadeOut();
-        $("#preloder").delay(200).fadeOut("slow");
+    Rs.(window).on('load', function () {
+        Rs.(".loader").fadeOut();
+        Rs.("#preloder").delay(200).fadeOut("slow");
 
         /*------------------
             Gallery filter
         --------------------*/
-        $('.featured__controls li').on('click', function () {
-            $('.featured__controls li').removeClass('active');
-            $(this).addClass('active');
+        Rs.('.featured__controls li').on('click', function () {
+            Rs.('.featured__controls li').removeClass('active');
+            Rs.(this).addClass('active');
         });
-        if ($('.featured__filter').length > 0) {
+        if (Rs.('.featured__filter').length > 0) {
             var containerEl = document.querySelector('.featured__filter');
             var mixer = mixitup(containerEl);
         }
@@ -34,28 +34,28 @@
     /*------------------
         Background Set
     --------------------*/
-    $('.set-bg').each(function () {
-        var bg = $(this).data('setbg');
-        $(this).css('background-image', 'url(' + bg + ')');
+    Rs.('.set-bg').each(function () {
+        var bg = Rs.(this).data('setbg');
+        Rs.(this).css('background-image', 'url(' + bg + ')');
     });
 
     //Humberger Menu
-    $(".humberger__open").on('click', function () {
-        $(".humberger__menu__wrapper").addClass("show__humberger__menu__wrapper");
-        $(".humberger__menu__overlay").addClass("active");
-        $("body").addClass("over_hid");
+    Rs.(".humberger__open").on('click', function () {
+        Rs.(".humberger__menu__wrapper").addClass("show__humberger__menu__wrapper");
+        Rs.(".humberger__menu__overlay").addClass("active");
+        Rs.("body").addClass("over_hid");
     });
 
-    $(".humberger__menu__overlay").on('click', function () {
-        $(".humberger__menu__wrapper").removeClass("show__humberger__menu__wrapper");
-        $(".humberger__menu__overlay").removeClass("active");
-        $("body").removeClass("over_hid");
+    Rs.(".humberger__menu__overlay").on('click', function () {
+        Rs.(".humberger__menu__wrapper").removeClass("show__humberger__menu__wrapper");
+        Rs.(".humberger__menu__overlay").removeClass("active");
+        Rs.("body").removeClass("over_hid");
     });
 
     /*------------------
 		Navigation
 	--------------------*/
-    $(".mobile-menu").slicknav({
+    Rs.(".mobile-menu").slicknav({
         prependTo: '#mobile-menu-wrap',
         allowParentLinks: true
     });
@@ -63,7 +63,7 @@
     /*-----------------------
         Categories Slider
     ------------------------*/
-    $(".categories__slider").owlCarousel({
+    Rs.(".categories__slider").owlCarousel({
         loop: true,
         margin: 0,
         items: 4,
@@ -96,14 +96,14 @@
     });
 
 
-    $('.hero__categories__all').on('click', function(){
-        $('.hero__categories ul').slideToggle(400);
+    Rs.('.hero__categories__all').on('click', function(){
+        Rs.('.hero__categories ul').slideToggle(400);
     });
 
     /*--------------------------
         Latest Product Slider
     ----------------------------*/
-    $(".latest-product__slider").owlCarousel({
+    Rs.(".latest-product__slider").owlCarousel({
         loop: true,
         margin: 0,
         items: 1,
@@ -118,7 +118,7 @@
     /*-----------------------------
         Product Discount Slider
     -------------------------------*/
-    $(".product__discount__slider").owlCarousel({
+    Rs.(".product__discount__slider").owlCarousel({
         loop: true,
         margin: 0,
         items: 3,
@@ -149,7 +149,7 @@
     /*---------------------------------
         Product Details Pic Slider
     ----------------------------------*/
-    $(".product__details__pic__slider").owlCarousel({
+    Rs.(".product__details__pic__slider").owlCarousel({
         loop: true,
         margin: 20,
         items: 4,
@@ -162,9 +162,9 @@
     /*-----------------------
 		Price Range Slider
 	------------------------ */
-    var rangeSlider = $(".price-range"),
-        minamount = $("#minamount"),
-        maxamount = $("#maxamount"),
+    var rangeSlider = Rs.(".price-range"),
+        minamount = Rs.("#minamount"),
+        maxamount = Rs.("#maxamount"),
         minPrice = rangeSlider.data('min'),
         maxPrice = rangeSlider.data('max');
     rangeSlider.slider({
@@ -173,27 +173,27 @@
         max: maxPrice,
         values: [minPrice, maxPrice],
         slide: function (event, ui) {
-            minamount.val('$' + ui.values[0]);
-            maxamount.val('$' + ui.values[1]);
+            minamount.val('Rs.' + ui.values[0]);
+            maxamount.val('Rs.' + ui.values[1]);
         }
     });
-    minamount.val('$' + rangeSlider.slider("values", 0));
-    maxamount.val('$' + rangeSlider.slider("values", 1));
+    minamount.val('Rs.' + rangeSlider.slider("values", 0));
+    maxamount.val('Rs.' + rangeSlider.slider("values", 1));
 
     /*--------------------------
         Select
     ----------------------------*/
-    $("select").niceSelect();
+    Rs.("select").niceSelect();
 
     /*------------------
 		Single Product
 	--------------------*/
-    $('.product__details__pic__slider img').on('click', function () {
+    Rs.('.product__details__pic__slider img').on('click', function () {
 
-        var imgurl = $(this).data('imgbigurl');
-        var bigImg = $('.product__details__pic__item--large').attr('src');
+        var imgurl = Rs.(this).data('imgbigurl');
+        var bigImg = Rs.('.product__details__pic__item--large').attr('src');
         if (imgurl != bigImg) {
-            $('.product__details__pic__item--large').attr({
+            Rs.('.product__details__pic__item--large').attr({
                 src: imgurl
             });
         }
@@ -202,13 +202,13 @@
     /*-------------------
 		Quantity change
 	--------------------- */
-    var proQty = $('.pro-qty');
+    var proQty = Rs.('.pro-qty');
     proQty.prepend('<span class="dec qtybtn">-</span>');
     proQty.append('<span class="inc qtybtn">+</span>');
     proQty.on('click', '.qtybtn', function () {
-        var $button = $(this);
-        var oldValue = $button.parent().find('input').val();
-        if ($button.hasClass('inc')) {
+        var Rs.button = Rs.(this);
+        var oldValue = Rs.button.parent().find('input').val();
+        if (Rs.button.hasClass('inc')) {
             var newVal = parseFloat(oldValue) + 1;
         } else {
             // Don't allow decrementing below zero
@@ -218,7 +218,7 @@
                 newVal = 0;
             }
         }
-        $button.parent().find('input').val(newVal);
+        Rs.button.parent().find('input').val(newVal);
     });
 
 })(jQuery);

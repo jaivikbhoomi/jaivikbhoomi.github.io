@@ -27,7 +27,7 @@
 .product__details__text {
 
     h3 {
-        color: $heading-color-2;
+        color: Rs.heading-color-2;
         font-weight: 700;
         margin-bottom: 16px;
     }
@@ -67,19 +67,19 @@
     .heart-icon {
         display: inline-block;
         font-size: 16px;
-        color: $para-color;
+        color: Rs.para-color;
         padding: 13px 16px 13px;
-        background: $background;
+        background: Rs.background;
     }
 
     ul {
-        border-top: 1px solid $border;
+        border-top: 1px solid Rs.border;
         padding-top: 40px;
         margin-top: 50px;
 
         li {
             font-size: 16px;
-            color: $normal-color;
+            color: Rs.normal-color;
             list-style: none;
             line-height: 36px;
 
@@ -102,7 +102,7 @@
                 a {
                     display: inline-block;
                     font-size: 15px;
-                    color: $normal-color;
+                    color: Rs.normal-color;
                     margin-right: 25px;
 
                     &:last-child {
@@ -125,24 +125,24 @@
     display: inline-block;
     position: relative;
     text-align: center;
-    background: $background;
+    background: Rs.background;
     margin-bottom: 5px;
 
     input {
         height: 100%;
         width: 100%;
         font-size: 16px;
-        color: $para-color;
+        color: Rs.para-color;
         width: 50px;
         border: none;
-        background: $background;
+        background: Rs.background;
         text-align: center;
     }
 
     .qtybtn {
         width: 35px;
         font-size: 16px;
-        color: $para-color;
+        color: Rs.para-color;
         cursor: pointer;
         display: inline-block;
     }
@@ -162,7 +162,7 @@
             top: 12px;
             height: 1px;
             width: 370px;
-            background: $border;
+            background: Rs.border;
             content: '';
         }
 
@@ -172,7 +172,7 @@
             top: 12px;
             height: 1px;
             width: 370px;
-            background: $border;
+            background: Rs.border;
             content: '';
         }
 

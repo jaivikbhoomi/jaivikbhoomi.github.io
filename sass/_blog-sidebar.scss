@@ -9,7 +9,7 @@
     margin-bottom: 50px;
 
     h4 {
-        color: $normal-color;
+        color: Rs.normal-color;
         font-weight: 700;
         margin-bottom: 25px;
     }
@@ -26,7 +26,7 @@
                 @include transition(all, .3s);
 
                 &:hover {
-                    color: $primary-color;
+                    color: Rs.primary-color;
                 }
             }
         }
@@ -43,19 +43,19 @@
             width: 100%;
             height: 46px;
             font-size: 16px;
-            color: $para-color;
+            color: Rs.para-color;
             padding-left: 15px;
             border: 1px solid #e1e1e1;
             border-radius: 20px;
 
             &::placeholder {
-                color: $para-color;
+                color: Rs.para-color;
             }
         }
 
         button {
             font-size: 16px;
-            color: $para-color;
+            color: Rs.para-color;
             background: transparent;
             border: none;
             position: absolute;
@@ -111,8 +111,8 @@
 
     a {
         font-size: 16px;
-        color: $para-color;
-        background: $background;
+        color: Rs.para-color;
+        background: Rs.background;
         display: inline-block;
         padding: 7px 26px 5px;
         margin-right: 6px;
